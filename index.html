@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ペットケアノート | 愛する家族の健康を、もっと身近に。</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-blue: #6b8cff;
+      --accent-pink: #ff9fa8;
+      --text-main: #2c3e50;
+      --text-sub: #5a6c7d;
+      --glass-bg: rgba(255, 255, 255, 0.9);
+      --section-bg: #f8fbff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text-main);
+      background-color: #ffffff;
+      line-height: 1.9;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('logo.png') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      padding: 50px;
+      border-radius: 40px;
+      max-width: 540px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 10;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    .signup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .signup-form input {
+      padding: 18px 25px;
+      border-radius: 50px;
+      border: 1px solid #ddd;
+      outline: none;
+    }
+
+    .cta-btn {
+      background: var(--accent-pink);
+      color: white;
+      border: none;
+      padding: 18px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 8px 20px rgba(255, 159, 168, 0.4);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      background: #ff8a95;
+    }
+
+    /* --- Global Section Settings --- */
+    section {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 60px;
+    }
+
+    .section-title span {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--primary-blue);
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    /* --- Problem Section --- */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .problem-card {
+      background: #fff;
+      padding: 40px;
+      border-radius: 25px;
+      border-left: 6px solid var(--accent-pink);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    }
+
+    /* --- Preview Section --- */
+    .preview-section {
+      background: var(--section-bg);
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .preview-item {
+      text-align: center;
+    }
+
+    .phone-frame {
+      background: #333;
+      padding: 10px;
+      border-radius: 40px;
+      display: inline-block;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      margin-bottom: 20px;
+    }
+
+    .phone-frame img {
+      width: 240px;
+      height: 480px;
+      object-fit: cover;
+      border-radius: 30px;
+      display: block;
+    }
+
+    /* --- Features Section --- */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-card {
+      text-align: center;
+      padding: 40px;
+      background: white;
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
+
+    .icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    /* --- Footer --- */
+    footer {
+      padding: 50px 0;
+      text-align: center;
+      background: #fff;
+      border-top: 1px solid #eee;
+      color: #999;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-card {
+        padding: 30px 20px;
+        text-align: center;
+      }
+
+      .hero {
+        height: auto;
+        padding: 100px 0 60px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <p style="color:var(--primary-blue); font-weight:700; margin-bottom:10px;">PRE-LAUNCHING</p>
+        <h1>愛する家族の健康な、<br>もっと身近に、シンプルに。</h1>
+        <p class="hero-desc">大切なワンちゃん・ネコちゃんのワクチン記録や体重管理。あなたに代わって、健康を見守ります。</p>
+        <form class="signup-form">
+          <input type="email" placeholder="メールアドレスを入力" required>
+          <button type="submit" class="cta-btn">リリース時に通知を受け取る（無料）</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title"><span>PROBLEM</span>こんなお悩み、ありませんか？</h2>
+      <div class="problem-grid">
+        <div class="problem-card">「前回のワクチンの日、いつだっけ？」と書類を探すのが大変。</div>
+        <div class="problem-card">体重の変化や食事の量を記録したいけど、三日坊主で続かない。</div>
+        <div class="problem-card">家族の間で、今日の体調や通院内容を共有するのが面倒。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="preview-section">
+    <div class="container">
+      <h2 class="section-title"><span>PREVIEW</span>アプリの機能イメージ</h2>
+      <div class="preview-grid">
+        <div class="preview-item">
+          <div class="phone-frame"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=500"
+              alt="Screen 1"></div>
+          <h3>健康分析グラフ</h3>
+          <p style="color:var(--text-sub);">日々の数値をグラフ化。<br>体調の変化を逃しません。</p>
+        </div>
+        <div class="preview-item">
+          <div class="phone-frame"><img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?q=80&w=500"
+              alt="Screen 2"></div>
+          <h3>通院カレンダー</h3>
+          <p style="color:var(--text-sub);">診察内容や薬の記録を<br>写真と一緒に保存可能。</p>
+        </div>
+        <div class="preview-item">
+          <div class="phone-frame"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=500"
+              alt="Screen 3"></div>
+          <h3>ファミリー同期</h3>
+          <p style="color:var(--text-sub);">家族全員でデータ共有。<br>お世話の漏れを防ぎます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title"><span>FEATURES</span>ペットケアノートの特長</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <span class="icon">🐶</span>
+          <h3>簡単ステップ</h3>
+          <p>誰でも迷わず使える、<br>直感的なデザイン。</p>
+        </div>
+        <div class="feature-card">
+          <span class="icon">🔔</span>
+          <h3>忘れない通知</h3>
+          <p>ワクチンやフィラリアの<br>予定を事前にお知らせ。</p>
+        </div>
+        <div class="feature-card">
+          <span class="icon">☁️</span>
+          <h3>安心のクラウド</h3>
+          <p>スマホを失くしても<br>データは消えません。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 ペットケアノート (Pet Care Note) All Rights Reserved.</p>
+  </footer>
+
+</body>
+
+</html>
